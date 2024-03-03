@@ -1,23 +1,17 @@
-import logo from './logo.svg';
-import './App.css';
+import { REACT_APP_KEY } from "./config/Url";
+import A1Router from "./module-app/a1/router";
+import B1Router from "./module-app/b1/router";
 
 function App() {
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
+    <div>
+      {REACT_APP_KEY == "A1" ? (
+        <A1Router />
+      ) : REACT_APP_KEY == "B1" ? (
+        <B1Router />
+      ) : (
+        <h1>Invalid Key</h1>
+      )}
     </div>
   );
 }
